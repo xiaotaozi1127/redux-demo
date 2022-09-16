@@ -1,15 +1,21 @@
-import { useState } from "react";
+import {useSelector, useDispatch} from "react-redux";
+
+
 function Counter() {
-//   // State: a counter value
-  const [counter, setCounter] = useState(0);
+  const counter = useSelector(state => state.counter)
+  const dispatch = useDispatch()
 
   // Action: code that causes an update to the state when something happens
   const increment = () => {
-    setCounter((prevCounter) => prevCounter + 1);
+      dispatch({
+          type: 'increment'
+      })
   };
 
   const decrement = () => {
-    setCounter((prevCounter) => prevCounter -1 1);
+      dispatch({
+          type: 'decrement'
+      })
   }
 
   // View: the UI definition
