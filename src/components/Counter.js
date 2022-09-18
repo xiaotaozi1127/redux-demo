@@ -1,9 +1,10 @@
 import {useSelector, useDispatch} from "react-redux";
-import { counterActions } from './store/index';
+import { counterActions } from '../store/CounterSlice';
+import {toggleActions} from '../store/ToggleSlice';
 
 function Counter() {
-  const counter = useSelector(state => state.counter)
-  const display = useSelector(state => state.display)
+  const counter = useSelector(state => state.counter.counter)
+  const display = useSelector(state => state.toggle.display)
   const dispatch = useDispatch()
 
   // Action: code that causes an update to the state when something happens
@@ -20,7 +21,7 @@ function Counter() {
   }
 
   const toggle = () => {
-    dispatch(counterActions.toggleCounter())
+    dispatch(toggleActions.toggle())
 }
 
   // View: the UI definition

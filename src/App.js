@@ -1,13 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
-import Counter from './Counter';
-import CounterClass from './CounterClass';
+import Counter from './components/Counter';
 
 
 function App() {
   return (
-    <Counter />
-  );
+    <div>
+      <Counter />
+    </div>
+  )
 }
 
 export default App;
