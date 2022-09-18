@@ -1,5 +1,5 @@
 import {useSelector, useDispatch} from "react-redux";
-
+import { counterActions } from './store/index';
 
 function Counter() {
   const counter = useSelector(state => state.counter)
@@ -8,27 +8,19 @@ function Counter() {
 
   // Action: code that causes an update to the state when something happens
   const increment = () => {
-      dispatch({
-          type: 'increment'
-      })
+      dispatch(counterActions.increment())
   };
 
   const increase = () => {
-    dispatch({
-        type: 'increase', amount: 5
-    })
+    dispatch(counterActions.increase(5)) //default argument name is payload
 };
 
   const decrement = () => {
-      dispatch({
-          type: 'decrement'
-      })
+      dispatch(counterActions.decrement())
   }
 
   const toggle = () => {
-    dispatch({
-        type: 'toggleCounter'
-    })
+    dispatch(counterActions.toggleCounter())
 }
 
   // View: the UI definition
